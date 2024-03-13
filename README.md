@@ -12,7 +12,7 @@ git clone git@github.com:pan-de-salita/banking-app.git
 2. **Create a New Branch**: Create a new branch for each new feature or fix. A branch is like a prototype of the codebase. A branch allows you to experiment with the codebase you copied without affecting the original or main codebase.
 
 ```
-git checkout -b FEATURE_NAME
+git checkout -b YOUR_BRANCH_NAME 
 ```
 
 
@@ -36,14 +36,14 @@ git add .
 6. **Save Your Changes**: Save your changes to your computer's copy of the repository.
 
 ```
-git commit -m "feat: add new feature"
+git commit -m "[YOUR COMMIT MESSAGE]"
 ```
 
 
 7. **Send Your Changes**: Send these changes to the repository on GitHub.
 
 ```
-git push -u origin feature/new-feature
+git push -u origin YOUR_BRANCH_NAME 
 ```
 
 

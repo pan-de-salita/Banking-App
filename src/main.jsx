@@ -20,6 +20,10 @@ const BankingApp = createBrowserRouter([
     element: <Root />,
     children: [
       {
+        index: true,
+        element: <CreateUser />,
+      },
+      {
         path: 'create-user',
         element: <CreateUser />,
       },
