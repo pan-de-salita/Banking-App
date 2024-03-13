@@ -36,7 +36,7 @@ git add .
 6. **Save Your Changes**: Save your changes to your computer's copy of the repository.
 
 ```
-git commit -m "[YOUR COMMIT MESSAGE]"
+git commit -m "YOUR_COMMIT_MESSAGE"
 ```
 
 
