@@ -5,21 +5,21 @@ Follow these steps to contribute to the `banking-app` repository:
 1. **Copy the Repository**: Make a copy of the repository on your computer.
 
 ```
-bash git clone git@github.com:pan-de-salita/banking-app.git
+git clone git@github.com:pan-de-salita/banking-app.git
 ```
 
 
-2. **Create a New Folder**: Create a new folder for each new feature or fix.
+2. **Create a New Branch**: Create a new branch for each new feature or fix. A branch is like a prototype of the codebase. A branch allows you to experiment with the codebase you copied without affecting the original or main codebase.
 
 ```
-bash git checkout -b FEATURE_NAME
+git checkout -b FEATURE_NAME
 ```
 
 
 3. **Update Your Copy**: Update your copy of the repository to make sure it's up to date. This ensures your local copy is up to date with the latest changes, helping avoid conflicts.
 
 ```
-bash git pull origin main
+git pull origin main
 ```
 
 
@@ -29,21 +29,21 @@ bash git pull origin main
 5. **Prepare Your Changes**: Prepare these changes to be saved.
 
 ```
-bash git add .
+git add .
 ```
 
 
 6. **Save Your Changes**: Save your changes to your computer's copy of the repository.
 
 ```
-bash git commit -m "feat: add new feature"
+git commit -m "feat: add new feature"
 ```
 
 
 7. **Send Your Changes**: Send these changes to the repository on GitHub.
 
 ```
-bash git push -u origin feature/new-feature
+git push -u origin feature/new-feature
 ```
 
 
