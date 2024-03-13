@@ -6,5 +6,5 @@ export default function Login() {
       <h1>i am the login page</h1>
       <Link to='/root'>click me</Link>
     </>
-  )
+  );
 }
