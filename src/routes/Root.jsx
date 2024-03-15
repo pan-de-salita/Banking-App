@@ -25,7 +25,7 @@ export default function Root() {
     <>
       <div className='w-screen h-screen flex flex-col-reverse hd:flex-row lg:flex-row'>
         <nav className='w-screen md:w-1/3 lg:w-1/5 p-5 md:p-10 lg:p-11 flex md:flex-col lg:flex-col justify-start gap-4 bg-[#17171B]'>
-          <SiGnubash className='hidden md:block lg:block' size={85} />
+          <SiGnubash className='hidden md:block lg:block' size={85} color='white' />
           {/*  TODO: refactor using .map */}
           <ul className='md:h-screen lg:h-screen flex flex-row md:flex-col lg:flex-col gap-8 md:pt-[3.8rem] lg:pt-[3.8rem]'>
             <li>
