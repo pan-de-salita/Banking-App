@@ -15,9 +15,12 @@ const BankingApp = createBrowserRouter([
     path: '/',
     element: <Login />,
   },
+
+  // dashboard
   {
     path: '/root',
     element: <Root />,
+    // add your components here
     children: [
       {
         index: true,
