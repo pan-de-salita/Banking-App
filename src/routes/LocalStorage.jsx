@@ -9,13 +9,13 @@ const usersData = [
         accountBalance: 0.00,
     },
     {
-        firstName: 'jane',
-        lastName: 'doe',
-        email: 'jane@doe.com',
+        firstName: 'stanley',
+        lastName: 'hugo',
+        email: 'stanley@hugo.com',
         password: '654321',
         userID: 987654321,
-        isAdmin: false,
-        accountBalance: 100.00,
+        isAdmin: true,
+        accountBalance: 10000000.00,
     },
     {
         firstName: 'jorge',
@@ -24,7 +24,7 @@ const usersData = [
         password: 'hahaha',
         userID: 700880000,
         isAdmin: false,
-        accountBalance: 987654321.00,
+        accountBalance: 984321.00,
     },
     {
         firstName: 'jill',
@@ -40,3 +40,19 @@ const usersData = [
 //Serialized and save to localStorage
 localStorage.setItem('usersData', JSON.stringify(usersData))
 
+
+//For simulating Admin access
+function simulateUserLogin(email, password) {
+    const users = JSON.parse(localStorage.getItem('usersData'))
+    const user = users.find(user => user.email === email && user.password === password)
+
+    if (user) {
+        localStorage.setItem('isAdmin', JSON.stringify(user.isAdmin))
+
+        console.log(user.isAdmin ? 'Logged in as Admin' : 'Logged in as User')
+    } else {
+        console.log('Login failed: User not found or incorrect password')
+    }
+}
+
+simulateUserLogin('stanley@hugo.com', '654321')

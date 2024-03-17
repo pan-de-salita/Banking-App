@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 
 export function ListOfUsers() {
-    const [users, setUSers] = useState([])
+    const [users, setUsers] = useState([])
     const isAdmin = JSON.parse(localStorage.getItem('isAdmin'))
 
     useEffect(() => {
         const storedUsers = JSON.parse(localStorage.getItem('users'))
         if (storedUsers) {
-            setUSers(storedUsers)
+            setUsers(storedUsers)
         }
     }, [])
 
@@ -32,11 +32,11 @@ export function ListOfUsers() {
                 </thead>
                 <tbody>
                     {users.map((user) => (
-                        <tr key={user.id}>
+                        <tr key={user.userID}>
                             <td>{user.id}</td>
-                            <td>{user.firstName}{user.lastName}</td>
+                            <td>{user.firstName} {user.lastName}</td>
                             <td>{user.email}</td>
-                            <td>{user.accountBalance.toFixed(2)}</td>
+                            <td>{user.accountBalance ? user.accountBalance.toFixed(2) : 'N/A'}</td>
                         </tr>
                     ))}
                 </tbody>
