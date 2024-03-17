@@ -1,16 +1,16 @@
 import {useState, useEffect} from 'react'
 
-export function GetBalance(){
-    const [balance, setBalance] = useState("")
+export default function GetBalance() {
+    const [balance, setBalance] = useState(null)
     const currentUserID = "user1"
 
     useEffect(() => {
-        const storedData = localStorage.getItem('user1')
+        const storedData = localStorage.getItem('usersData')
         if (storedData) {
-            const userData = JSON.parse(storedData)
-            const userBalance = userData[currentUserID]?.accountBalance
-            if (userBalance !== undefined) {
-                setBalance(userBalance)
+            const users = JSON.parse(storedData)
+            const user = users.find(user => user.userID === currentUserID)
+            if (user) {
+                setBalance(user.accountBalance)
             }
         }
     }, [])
@@ -19,8 +19,7 @@ export function GetBalance(){
         <div>
             {balance != null ? (
                 <div>
-                    <h1>{userAccount}</h1>
-                    <h2>{GetBalance}</h2>
+                    <h2>Available Balance: {GetBalance}</h2>
                 </div>
             ) : (
                 <div>

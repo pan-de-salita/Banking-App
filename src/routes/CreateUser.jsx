@@ -1,3 +1,5 @@
+import GetBalance from "./GetBalance";
+
 const inputClasses = 'w-full border-solid border-2 border-[#17171B] rounded-[5px] p-[5px]';
 
 class User {
@@ -19,6 +21,10 @@ export default function CreateUser() {
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const updatedUsers = [...existingUsers, newUser];
     localStorage.setItem('users', JSON.stringify(updatedUsers));
+  }
+
+  function CheckBalance() {
+    <GetBalance />
   }
 
   return (
@@ -48,6 +54,8 @@ export default function CreateUser() {
           </label>
           <button className='mt-10 text-white'>Submit</button>
         </form >
+
+        <button onClick={CheckBalance}>Check Balance</button>
       </div>
     </>
   );

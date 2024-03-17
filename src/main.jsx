@@ -9,6 +9,7 @@ import Root from './routes/Root';
 import CreateUser from './routes/CreateUser';
 import Deposit from './routes/Deposit';
 import './index.css'
+import GetBalance from './routes/GetBalance';
 
 const BankingApp = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const BankingApp = createBrowserRouter([
         path: 'deposit',
         element: <Deposit />,
       },
+      {
+        path: 'get-balance',
+        element: <GetBalance />
+      }
     ],
   },
 ]);
