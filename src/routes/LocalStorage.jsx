@@ -1,4 +1,4 @@
-const usersData = [
+export const usersData = [
     {
         firstName: 'john',
         lastName: 'doe',
@@ -42,17 +42,24 @@ localStorage.setItem('usersData', JSON.stringify(usersData))
 
 
 //For simulating Admin access
-function simulateUserLogin(email, password) {
-    const users = JSON.parse(localStorage.getItem('usersData'))
-    const user = users.find(user => user.email === email && user.password === password)
+export const simulateUserLogin = (email, password, isAdmin = false) => {
+    localStorage.setItem('isLoggedIn', 'true');
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
+};
 
-    if (user) {
-        localStorage.setItem('isAdmin', JSON.stringify(user.isAdmin))
+// export function simulateUserLogin(email, password) {
+//     const users = JSON.parse(localStorage.getItem('usersData'))
+//     const user = users.find(user => user.email === email && user.password === password)
 
-        console.log(user.isAdmin ? 'Logged in as Admin' : 'Logged in as User')
-    } else {
-        console.log('Login failed: User not found or incorrect password')
-    }
-}
+//     if (user) {
+//         localStorage.setItem('isAdmin', JSON.stringify(user.isAdmin))
 
-simulateUserLogin('stanley@hugo.com', '654321')
+//         console.log(user.isAdmin ? 'Logged in as Admin' : 'Logged in as User')
+//     } else {
+//         console.log('Login failed: User not found or incorrect password')
+//     }
+// }
+
+
+

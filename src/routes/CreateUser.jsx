@@ -1,4 +1,4 @@
-import GetBalance from "./GetBalance";
+import { Link } from "react-router-dom";
 
 const inputClasses = 'w-full border-solid border-2 border-[#17171B] rounded-[5px] p-[5px]';
 
@@ -15,16 +15,13 @@ class User {
 }
 
 export default function CreateUser() {
+
   function createUserFromFormResults(e) {
     e.preventDefault();
     const newUser = new User(...[...e.target.elements].map(input => input.value));
     const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
     const updatedUsers = [...existingUsers, newUser];
     localStorage.setItem('users', JSON.stringify(updatedUsers));
-  }
-
-  function CheckBalance() {
-    <GetBalance />
   }
 
   return (
@@ -54,8 +51,7 @@ export default function CreateUser() {
           </label>
           <button className='mt-10 text-white'>Submit</button>
         </form >
-
-        <button onClick={CheckBalance}>Check Balance</button>
+        <Link to='/user-list'>View User Lists</Link>
       </div>
     </>
   );
