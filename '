@@ -6,7 +6,7 @@ class User {
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    this.userId = crypto.randomUUID();
+    this.userId = uuidv4().slice(0, 8);
     this.isAdmin = false;
     this.accountBalance = accountBalance;
   }
@@ -15,27 +15,13 @@ class User {
 export default function CreateUser() {
   function handleForm(e) {
     e.preventDefault();
-    const newUser = createNewUser(e.target.elements);
-    const existingUsers = getExistingUsers();
-
-    if (!isDuplicateUser(newUser, existingUsers)) {
-      localStorage.setItem('users', JSON.stringify([...existingUsers, newUser]));
-    } else {
-      // TODO: handle duplicateUsers
-      console.log('error, user exists');
-    }
+    const existingUsers = JSON.parse(localStorage.getItem('users')) || [];
+    const updatedUsers = [...existingUsers, createNewUser(e.target.elements)];
+    localStorage.setItem('users', JSON.stringify(updatedUsers));
   }
 
   function createNewUser(formInput) {
     return new User(...[...formInput].map(input => input.value));
-  }
-
-  function getExistingUsers() {
-    return JSON.parse(localStorage.getItem('users')) || [];
-  }
-
-  function isDuplicateUser(newUser, existingUsers) {
-    return existingUsers.some(user => user.email === newUser.email);
   }
 
   return (
