@@ -19,9 +19,8 @@ export default function Login() {
   return (
     <>
       <h1>i am the login page</h1>
-      <button onClick={handleUserLogin}>Simulate Uer Login</button>
-      <button onClick={handleAdminLogin}>Simulate Admin Login</button>
-      <Link to='/root'>click me</Link>
+      <button onClick={handleUserLogin} className='mt-10 text-white bg-blue-500'>Simulate Uer Login</button>
+      <button onClick={handleAdminLogin} className='mt-10 text-white bg-blue-500'>Simulate Admin Login</button>
     </>
   );
 }
