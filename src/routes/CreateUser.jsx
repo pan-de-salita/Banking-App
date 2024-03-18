@@ -51,7 +51,7 @@ export default function CreateUser() {
           </label>
           <button className='mt-10 text-white'>Submit</button>
         </form >
-        <Link to='/user-list'>View User Lists</Link>
+        <Link to='/root/user-list'>View User Lists</Link>
       </div>
     </>
   );
