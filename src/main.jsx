@@ -9,6 +9,7 @@ import Root from './routes/Root';
 import CreateUser from './routes/CreateUser';
 import Deposit from './routes/Deposit';
 import './index.css'
+import { ToastContainer } from 'react-toastify';
 
 const BankingApp = createBrowserRouter([
   {
@@ -38,5 +39,6 @@ const BankingApp = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={BankingApp} />
+    <ToastContainer />
   </React.StrictMode>,
 )
