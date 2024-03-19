@@ -7,7 +7,7 @@ import {
 import Login from './routes/Login';
 import Root from './routes/Root';
 import CreateUser from './routes/CreateUser';
-import Deposit from './routes/Deposit';
+import Deposit from './routes/DepositDetails';
 import './index.css'
 
 const BankingApp = createBrowserRouter([
