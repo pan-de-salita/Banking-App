@@ -10,6 +10,7 @@ import CreateUser from './routes/CreateUser';
 import Deposit from './routes/Deposit';
 import './index.css'
 import ListOfUsers from './routes/ListOfUsers';
+import GetBalance from './routes/GetBalance';
 
 const BankingApp = createBrowserRouter([
   {
@@ -38,8 +39,12 @@ const BankingApp = createBrowserRouter([
       {
         path: 'user-list',
         element: <ListOfUsers />,
-        errorElement: <div>Page not found</div>
-      }
+        errorElement: <div>Page not found</div>,
+      },
+      {
+        path: 'get-balance',
+        element: <GetBalance />,
+      },
     ],
   },
 ]);
