@@ -46,6 +46,7 @@ export const simulateUserLogin = (email, password, isAdmin = false) => {
     localStorage.setItem('isLoggedIn', 'true');
     localStorage.setItem('userEmail', email);
     localStorage.setItem('isAdmin', JSON.stringify(isAdmin));
+    localStorage.setItem('currentUserID', JSON.stringify(user.userID))
 };
 
 // export function simulateUserLogin(email, password) {

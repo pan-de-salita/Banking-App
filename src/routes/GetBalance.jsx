@@ -2,9 +2,10 @@ import {useState, useEffect} from 'react'
 
 export default function GetBalance() {
     const [balance, setBalance] = useState(null)
-    const currentUserID = "user1"
 
     useEffect(() => {
+        const currentUserID = JSON.parse(localStorage.getItem('currentUserID'))
+        
         const storedData = localStorage.getItem('usersData')
         if (storedData) {
             const users = JSON.parse(storedData)
