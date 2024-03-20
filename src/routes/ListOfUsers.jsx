@@ -1,8 +1,17 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { simulateUserLogin } from "./UserDataStorage";
 
 export default function ListOfUsers() {
     const [users, setUsers] = useState([])
+    const navigate = useNavigate()
     const isAdmin = JSON.parse(localStorage.getItem('isAdmin'))
+
+    const handleAdminLogin = () => {
+        simulateUserLogin('stanley@hugo.com', '654321', true)
+        alert("Logged in as Admin")
+        navigate('/root')
+    }
 
     useEffect(() => {
         const storedUsers = JSON.parse(localStorage.getItem('usersData'))
@@ -14,7 +23,7 @@ export default function ListOfUsers() {
     if (!isAdmin) {
         return <div>
             <h1>Log in as Admin</h1>
-            <button>Admin Log In</button>
+            <button onClick={handleAdminLogin} className='mt-10 text-white bg-blue-500'>Simulate Admin Login</button>
         </div>        
     }
     
