@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { simulateUserLogin } from './LocalStorage';
+import { simulateUserLogin } from './UserDataStorage';
 
 export default function Login() {
   const navigate = useNavigate();

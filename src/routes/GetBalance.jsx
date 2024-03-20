@@ -19,7 +19,7 @@ export default function GetBalance() {
         <div>
             {balance != null ? (
                 <div>
-                    <h2>Available Balance: {GetBalance}</h2>
+                    <h2>Available Balance: ${balance.toFixed(2)}</h2>
                 </div>
             ) : (
                 <div>
