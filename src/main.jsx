@@ -9,20 +9,15 @@ import Root from './routes/Root';
 import CreateUser from './routes/CreateUser';
 import Deposit from './routes/Deposit';
 import './index.css'
-import ListOfUsers from './routes/ListOfUsers';
-import GetBalance from './routes/GetBalance';
 
 const BankingApp = createBrowserRouter([
   {
     path: '/',
     element: <Login />,
   },
-
-  // dashboard
   {
     path: '/root',
     element: <Root />,
-    // add your components here
     children: [
       {
         index: true,
@@ -52,5 +47,6 @@ const BankingApp = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <RouterProvider router={BankingApp} />
+    <ToastContainer />
   </React.StrictMode>,
 )

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const inputClasses = 'w-full border-solid border-2 border-[#17171B] rounded-[5px] p-[5px]';
 
 class User {
@@ -8,14 +6,13 @@ class User {
     this.lastName = lastName;
     this.email = email;
     this.password = password;
-    this.userID = Math.random();
+    this.userId = crypto.randomUUID();
     this.isAdmin = false;
     this.accountBalance = accountBalance;
   }
 }
 
 export default function CreateUser() {
-
   function createUserFromFormResults(e) {
     e.preventDefault();
     const newUser = new User(...[...e.target.elements].map(input => input.value));
@@ -51,10 +48,7 @@ export default function CreateUser() {
           </label>
           <button className='mt-10 text-white'>Submit</button>
         </form >
-        <Link to='/root/user-list'>View User Lists</Link><br></br>
-        <Link to='/root/get-balance'>View Account Balance</Link>
       </div>
     </>
   );
 }
-
